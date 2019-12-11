@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Collablog';
-
-  
+  label1 = "Nom d'utilisateur Git";
+  label2 = "Url du repository";
 }
