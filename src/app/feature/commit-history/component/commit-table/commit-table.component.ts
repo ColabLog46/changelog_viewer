@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommitService } from '../../services/commit.service';
 
 @Component({
   selector: 'app-commit-table',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommitTableComponent implements OnInit {
 
-  constructor() { }
+  commitList: any;
+
+  constructor(private serviceCommit: CommitService) { }
 
   ngOnInit() {
+    this.getCommitList();
+  }
+
+  getCommitList() {
+    this.serviceCommit.getCommitList("ColabLog46","changelog_viewer",1).subscribe(
+      (data: any) => {
+        this.commitList = data;
+      }
+    );
   }
 
 }

@@ -7,6 +7,9 @@ import { CommitItemComponent } from './component/commit-item/commit-item.compone
 
 import { ShareModule } from '../../share/share.module';
 
+import { CommitService } from './services/commit.service';
+
+
 @NgModule({
   declarations: [CommitTableComponent, CommitItemComponent],
   imports: [
