@@ -141,7 +141,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-commit-table></app-commit-table>\n\n"
+module.exports = "<app-commit-table></app-commit-table>\n"
 
 /***/ }),
 
@@ -272,7 +272,7 @@ var CommitHistoryModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".commit-item {\n  max-width: 80%;\n  margin-right: 10%;\n  margin-left: 10%;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZmVhdHVyZS9jb21taXQtaGlzdG9yeS9jb21wb25lbnQvY29tbWl0LWl0ZW0vY29tbWl0LWl0ZW0uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQWM7RUFDZCxpQkFBaUI7RUFDakIsZ0JBQWdCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvZmVhdHVyZS9jb21taXQtaGlzdG9yeS9jb21wb25lbnQvY29tbWl0LWl0ZW0vY29tbWl0LWl0ZW0uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb21taXQtaXRlbSB7XG4gIG1heC13aWR0aDogODAlO1xuICBtYXJnaW4tcmlnaHQ6IDEwJTtcbiAgbWFyZ2luLWxlZnQ6IDEwJTtcbn1cblxuIl19 */"
+module.exports = ".commit-item {\n  max-width: 80%;\n  margin-right: 10%;\n  margin-left: 10%;\n  margin-bottom: 10px;\n  margin-top: 10px;\n}\n\n.mat-card-content{\n  padding-top: 2.5%;\n  text-align: inherit;\n  margin-left: 80px;\n  width: 78%;\n}\n\n.mat-card-image{\n  width: 6%;\n  height: 6%;\n  padding-top: 20px;\n}\n\n.author-login{\n  margin-top: -7.5%;\n  margin-left: 5%;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZmVhdHVyZS9jb21taXQtaGlzdG9yeS9jb21wb25lbnQvY29tbWl0LWl0ZW0vY29tbWl0LWl0ZW0uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQWM7RUFDZCxpQkFBaUI7RUFDakIsZ0JBQWdCO0VBQ2hCLG1CQUFtQjtFQUNuQixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLGlCQUFpQjtFQUNqQixVQUFVO0FBQ1o7O0FBRUE7RUFDRSxTQUFTO0VBQ1QsVUFBVTtFQUNWLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvZmVhdHVyZS9jb21taXQtaGlzdG9yeS9jb21wb25lbnQvY29tbWl0LWl0ZW0vY29tbWl0LWl0ZW0uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb21taXQtaXRlbSB7XG4gIG1heC13aWR0aDogODAlO1xuICBtYXJnaW4tcmlnaHQ6IDEwJTtcbiAgbWFyZ2luLWxlZnQ6IDEwJTtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbn1cblxuLm1hdC1jYXJkLWNvbnRlbnR7XG4gIHBhZGRpbmctdG9wOiAyLjUlO1xuICB0ZXh0LWFsaWduOiBpbmhlcml0O1xuICBtYXJnaW4tbGVmdDogODBweDtcbiAgd2lkdGg6IDc4JTtcbn1cblxuLm1hdC1jYXJkLWltYWdle1xuICB3aWR0aDogNiU7XG4gIGhlaWdodDogNiU7XG4gIHBhZGRpbmctdG9wOiAyMHB4O1xufVxuXG4uYXV0aG9yLWxvZ2lue1xuICBtYXJnaW4tdG9wOiAtNy41JTtcbiAgbWFyZ2luLWxlZnQ6IDUlO1xufVxuXG4iXX0= */"
 
 /***/ }),
 
@@ -283,7 +283,7 @@ module.exports = ".commit-item {\n  max-width: 80%;\n  margin-right: 10%;\n  mar
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card class=\"commit-item\">\n  <mat-card-header>\n    <div mat-card-avatar class=\"example-header-image\"></div>\n    <mat-card-title>Commit #5252</mat-card-title>\n    <mat-card-subtitle>[UPDATE] The tree structure of the application <-ici  </mat-card-subtitle>\n  </mat-card-header>\n  <mat-card-content>\n    <h4>[UPDATE] The tree structure of the application <- ou ici</h4>\n  </mat-card-content>\n</mat-card>\n"
+module.exports = "<mat-card class=\"commit-item\">\n  <mat-card-header>\n    <div mat-card-avatar class=\"example-header-image\"></div>\n    <mat-card-title>{{commit.commit.message}}</mat-card-title>\n    <mat-card-subtitle>\n      <img mat-card-image src={{commit.author.avatar_url}}>\n      <div class=\"author-login\">\n          {{commit.author.login}}\n      </div>\n    </mat-card-subtitle>\n  </mat-card-header>\n  <mat-card-content>\n  </mat-card-content>\n  <mat-card-actions>\n    <a mat-raised-button href={{commit.html_url}} target=\"_blank\">Go to commit view</a>\n  </mat-card-actions>\n</mat-card>\n"
 
 /***/ }),
 
@@ -305,7 +305,12 @@ var CommitItemComponent = /** @class */ (function () {
     function CommitItemComponent() {
     }
     CommitItemComponent.prototype.ngOnInit = function () {
+        console.log(this.commit);
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], CommitItemComponent.prototype, "commit", void 0);
     CommitItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-commit-item',
@@ -328,7 +333,7 @@ var CommitItemComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2ZlYXR1cmUvY29tbWl0LWhpc3RvcnkvY29tcG9uZW50L2NvbW1pdC10YWJsZS9jb21taXQtdGFibGUuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = ".mat-spinner {\n  position: relative;\n  margin-left: 50%;\n  margin-right: 50%;\n  height: 80%;\n  width: 80%;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZmVhdHVyZS9jb21taXQtaGlzdG9yeS9jb21wb25lbnQvY29tbWl0LXRhYmxlL2NvbW1pdC10YWJsZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsV0FBVztFQUNYLFVBQVU7QUFDWiIsImZpbGUiOiJzcmMvYXBwL2ZlYXR1cmUvY29tbWl0LWhpc3RvcnkvY29tcG9uZW50L2NvbW1pdC10YWJsZS9jb21taXQtdGFibGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXQtc3Bpbm5lciB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbWFyZ2luLWxlZnQ6IDUwJTtcbiAgbWFyZ2luLXJpZ2h0OiA1MCU7XG4gIGhlaWdodDogODAlO1xuICB3aWR0aDogODAlO1xufVxuIl19 */"
 
 /***/ }),
 
@@ -339,7 +344,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-commit-item></app-commit-item>\n"
+module.exports = "\n<app-commit-item *ngFor=\"let commit of commitList\" [commit] = commit></app-commit-item>\n"
 
 /***/ }),
 
@@ -355,12 +360,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommitTableComponent", function() { return CommitTableComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_commit_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/commit.service */ "./src/app/feature/commit-history/services/commit.service.ts");
+
 
 
 var CommitTableComponent = /** @class */ (function () {
-    function CommitTableComponent() {
+    function CommitTableComponent(serviceCommit) {
+        this.serviceCommit = serviceCommit;
     }
     CommitTableComponent.prototype.ngOnInit = function () {
+        this.getCommitList();
+    };
+    CommitTableComponent.prototype.getCommitList = function () {
+        var _this = this;
+        this.serviceCommit.getCommitList("ColabLog46", "changelog_viewer", 1).subscribe(function (data) {
+            _this.commitList = data;
+        });
     };
     CommitTableComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -368,9 +383,45 @@ var CommitTableComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./commit-table.component.html */ "./src/app/feature/commit-history/component/commit-table/commit-table.component.html"),
             styles: [__webpack_require__(/*! ./commit-table.component.css */ "./src/app/feature/commit-history/component/commit-table/commit-table.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_commit_service__WEBPACK_IMPORTED_MODULE_2__["CommitService"]])
     ], CommitTableComponent);
     return CommitTableComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/feature/commit-history/services/commit.service.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/feature/commit-history/services/commit.service.ts ***!
+  \*******************************************************************/
+/*! exports provided: CommitService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommitService", function() { return CommitService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+var CommitService = /** @class */ (function () {
+    function CommitService(http) {
+        this.http = http;
+    }
+    CommitService.prototype.getCommitList = function (user, repo, pageNumber) {
+        return this.http.get("https://api.github.com/repos/" + user + "/" + repo + "/commits?sha=master&page=" + pageNumber);
+    };
+    CommitService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], CommitService);
+    return CommitService;
 }());
 
 
@@ -433,7 +484,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm5/progress-spinner.es5.js");
+
+
+
 
 
 
@@ -446,10 +503,15 @@ var ShareModule = /** @class */ (function () {
             declarations: [],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardModule"]
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"],
+                _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
             ],
             exports: [
-                _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"],
+                _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"],
             ]
         })
     ], ShareModule);
