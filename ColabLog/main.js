@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Renseignez vos informations</h1>\n<form>\n\t<div>\n\t\t<label for=\"nameUser\">Nom d'utilisateur : </label>\n    \t<input type=\"textUser\" name=\"name\" id=\"name\" required>\n\t</div>\n\t<div>\n\t\t<label for=\"urlRepo\">URL du repository : </label>\n    \t<input type=\"textUrl\" name=\"url\" id=\"url\" required>\n\t</div>\n</form>\n<app-container></app-container>\n"
+module.exports = "<app-container></app-container>\n"
 
 /***/ }),
 
@@ -141,7 +141,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-commit-table></app-commit-table>\n"
+module.exports = "<app-commit-form (commitUserNameToChild)=\"updateUserName($event)\" (commitRepoToChild)=\"updateRepo($event)\"></app-commit-form>\n<app-commit-table [githubRepo]=\"githubRepo\"  [githubUser]=\"githubUserName\"></app-commit-table>\n"
 
 /***/ }),
 
@@ -163,6 +163,12 @@ var ContainerComponent = /** @class */ (function () {
     function ContainerComponent() {
     }
     ContainerComponent.prototype.ngOnInit = function () {
+    };
+    ContainerComponent.prototype.updateUserName = function ($event) {
+        this.githubUserName = $event;
+    };
+    ContainerComponent.prototype.updateRepo = function ($event) {
+        this.githubRepo = $event;
     };
     ContainerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -215,6 +221,122 @@ var CoreModule = /** @class */ (function () {
         })
     ], CoreModule);
     return CoreModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/feature/commit-form/commit-form.module.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/feature/commit-form/commit-form.module.ts ***!
+  \***********************************************************/
+/*! exports provided: CommitFormModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommitFormModule", function() { return CommitFormModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _components_commit_form_commit_form_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/commit-form/commit-form.component */ "./src/app/feature/commit-form/components/commit-form/commit-form.component.ts");
+/* harmony import */ var _share_share_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../share/share.module */ "./src/app/share/share.module.ts");
+
+
+
+
+
+var CommitFormModule = /** @class */ (function () {
+    function CommitFormModule() {
+    }
+    CommitFormModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            declarations: [_components_commit_form_commit_form_component__WEBPACK_IMPORTED_MODULE_3__["CommitFormComponent"]],
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+                _share_share_module__WEBPACK_IMPORTED_MODULE_4__["ShareModule"],
+            ],
+            exports: [_components_commit_form_commit_form_component__WEBPACK_IMPORTED_MODULE_3__["CommitFormComponent"]]
+        })
+    ], CommitFormModule);
+    return CommitFormModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/feature/commit-form/components/commit-form/commit-form.component.css":
+/*!**************************************************************************************!*\
+  !*** ./src/app/feature/commit-form/components/commit-form/commit-form.component.css ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".form-field-main{\n\tmargin-left: 10%;\n}\n\n.mat-form-field{\n\twidth: 44%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZmVhdHVyZS9jb21taXQtZm9ybS9jb21wb25lbnRzL2NvbW1pdC1mb3JtL2NvbW1pdC1mb3JtLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxnQkFBZ0I7QUFDakI7O0FBRUE7Q0FDQyxVQUFVO0FBQ1giLCJmaWxlIjoic3JjL2FwcC9mZWF0dXJlL2NvbW1pdC1mb3JtL2NvbXBvbmVudHMvY29tbWl0LWZvcm0vY29tbWl0LWZvcm0uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb3JtLWZpZWxkLW1haW57XG5cdG1hcmdpbi1sZWZ0OiAxMCU7XG59XG5cbi5tYXQtZm9ybS1maWVsZHtcblx0d2lkdGg6IDQ0JTtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/feature/commit-form/components/commit-form/commit-form.component.html":
+/*!***************************************************************************************!*\
+  !*** ./src/app/feature/commit-form/components/commit-form/commit-form.component.html ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"form-field-main\">\n  <mat-form-field>\n    <input matInput placeholder=\"GitHub Username\" [(ngModel)]=\"commitUserName\" (ngModelChange)=\"saveCommitUserName($event)\">\n  </mat-form-field>\n  <b>/</b>\n  <mat-form-field>\n    <input matInput placeholder=\"GitHub repo\" [(ngModel)]=\"commitRepo\" (ngModelChange)=\"saveRepo($event)\">\n  </mat-form-field>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/feature/commit-form/components/commit-form/commit-form.component.ts":
+/*!*************************************************************************************!*\
+  !*** ./src/app/feature/commit-form/components/commit-form/commit-form.component.ts ***!
+  \*************************************************************************************/
+/*! exports provided: CommitFormComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommitFormComponent", function() { return CommitFormComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var CommitFormComponent = /** @class */ (function () {
+    function CommitFormComponent() {
+        this.githubUserNameToChild = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.githubRepoToChild = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    CommitFormComponent.prototype.ngOnInit = function () {
+        this.githubUserName = '';
+        this.githubRepo = '';
+    };
+    CommitFormComponent.prototype.saveRepo = function ($event) {
+        console.log($event);
+        this.githubRepoToChild.emit(this.githubRepo);
+    };
+    CommitFormComponent.prototype.saveCommitUserName = function ($event) {
+        console.log($event);
+        this.githubRepoToChild.emit(this.githubUserName);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], CommitFormComponent.prototype, "githubUserNameToChild", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], CommitFormComponent.prototype, "githubRepoToChild", void 0);
+    CommitFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-commit-form',
+            template: __webpack_require__(/*! ./commit-form.component.html */ "./src/app/feature/commit-form/components/commit-form/commit-form.component.html"),
+            styles: [__webpack_require__(/*! ./commit-form.component.css */ "./src/app/feature/commit-form/components/commit-form/commit-form.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], CommitFormComponent);
+    return CommitFormComponent;
 }());
 
 
@@ -369,14 +491,26 @@ var CommitTableComponent = /** @class */ (function () {
         this.serviceCommit = serviceCommit;
     }
     CommitTableComponent.prototype.ngOnInit = function () {
-        this.getCommitList();
+        //this.getCommitList();
+    };
+    CommitTableComponent.prototype.ngOnChanges = function (changes) {
+        console.log("eerer");
+        console.log(changes);
     };
     CommitTableComponent.prototype.getCommitList = function () {
         var _this = this;
-        this.serviceCommit.getCommitList("ColabLog46", "changelog_viewer", 1).subscribe(function (data) {
+        this.serviceCommit.getCommitList(this.githubUser, this.githubRepo, 1).subscribe(function (data) {
             _this.commitList = data;
         });
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], CommitTableComponent.prototype, "githubRepo", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], CommitTableComponent.prototype, "githubUser", void 0);
     CommitTableComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-commit-table',
@@ -442,7 +576,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _commit_history_commit_history_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./commit-history/commit-history.module */ "./src/app/feature/commit-history/commit-history.module.ts");
-/* harmony import */ var _share_share_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../share/share.module */ "./src/app/share/share.module.ts");
+/* harmony import */ var _commit_form_commit_form_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./commit-form/commit-form.module */ "./src/app/feature/commit-form/commit-form.module.ts");
+/* harmony import */ var _share_share_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../share/share.module */ "./src/app/share/share.module.ts");
+
 
 
 
@@ -457,10 +593,12 @@ var FeatureModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _commit_history_commit_history_module__WEBPACK_IMPORTED_MODULE_3__["CommitHistoryModule"],
-                _share_share_module__WEBPACK_IMPORTED_MODULE_4__["ShareModule"]
+                _share_share_module__WEBPACK_IMPORTED_MODULE_5__["ShareModule"],
+                _commit_form_commit_form_module__WEBPACK_IMPORTED_MODULE_4__["CommitFormModule"]
             ],
             exports: [
-                _commit_history_commit_history_module__WEBPACK_IMPORTED_MODULE_3__["CommitHistoryModule"]
+                _commit_history_commit_history_module__WEBPACK_IMPORTED_MODULE_3__["CommitHistoryModule"],
+                _commit_form_commit_form_module__WEBPACK_IMPORTED_MODULE_4__["CommitFormModule"],
             ]
         })
     ], FeatureModule);
@@ -488,6 +626,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
 /* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm5/progress-spinner.es5.js");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
+
+
 
 
 
@@ -506,12 +650,18 @@ var ShareModule = /** @class */ (function () {
                 _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"],
                 _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormFieldModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
             ],
             exports: [
                 _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"],
                 _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"],
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormFieldModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
             ]
         })
     ], ShareModule);
