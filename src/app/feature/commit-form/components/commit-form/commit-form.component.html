@@ -1,0 +1,9 @@
+<div class="form-field-main">
+  <mat-form-field>
+    <input matInput placeholder="GitHub Username" [(ngModel)]="commitUserName" (ngModelChange)="saveCommitUserName($event)">
+  </mat-form-field>
+  <b>/</b>
+  <mat-form-field>
+    <input matInput placeholder="GitHub repo" [(ngModel)]="commitRepo" (ngModelChange)="saveRepo($event)">
+  </mat-form-field>
+</div>
