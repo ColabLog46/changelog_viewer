@@ -141,7 +141,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-commit-form (commitUserNameToChild)=\"updateUserName($event)\" (commitRepoToChild)=\"updateRepo($event)\"></app-commit-form>\n<app-commit-table [githubRepo]=\"githubRepo\"  [githubUser]=\"githubUserName\"></app-commit-table>\n"
+module.exports = "<app-commit-form (githubUserNameToChild)=\"updateUserName($event)\" (githubRepoToChild)=\"updateRepo($event)\"></app-commit-form>\n\n<app-commit-table [githubRepo]=\"githubRepo\"  [githubUser]=\"githubUserName\"></app-commit-table>\n\n"
 
 /***/ }),
 
@@ -163,6 +163,8 @@ var ContainerComponent = /** @class */ (function () {
     function ContainerComponent() {
     }
     ContainerComponent.prototype.ngOnInit = function () {
+        this.githubUserName = '';
+        this.githubRepo = '';
     };
     ContainerComponent.prototype.updateUserName = function ($event) {
         this.githubUserName = $event;
@@ -274,7 +276,7 @@ var CommitFormModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".form-field-main{\n\tmargin-left: 10%;\n}\n\n.mat-form-field{\n\twidth: 44%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZmVhdHVyZS9jb21taXQtZm9ybS9jb21wb25lbnRzL2NvbW1pdC1mb3JtL2NvbW1pdC1mb3JtLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxnQkFBZ0I7QUFDakI7O0FBRUE7Q0FDQyxVQUFVO0FBQ1giLCJmaWxlIjoic3JjL2FwcC9mZWF0dXJlL2NvbW1pdC1mb3JtL2NvbXBvbmVudHMvY29tbWl0LWZvcm0vY29tbWl0LWZvcm0uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb3JtLWZpZWxkLW1haW57XG5cdG1hcmdpbi1sZWZ0OiAxMCU7XG59XG5cbi5tYXQtZm9ybS1maWVsZHtcblx0d2lkdGg6IDQ0JTtcbn0iXX0= */"
+module.exports = ".form-field-main{\n\tmargin-left: 10%;\n}\n\n.mat-form-field{\n\twidth: 44%;\n}\n\na{\n  cursor: pointer;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZmVhdHVyZS9jb21taXQtZm9ybS9jb21wb25lbnRzL2NvbW1pdC1mb3JtL2NvbW1pdC1mb3JtLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxnQkFBZ0I7QUFDakI7O0FBRUE7Q0FDQyxVQUFVO0FBQ1g7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvZmVhdHVyZS9jb21taXQtZm9ybS9jb21wb25lbnRzL2NvbW1pdC1mb3JtL2NvbW1pdC1mb3JtLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9ybS1maWVsZC1tYWlue1xuXHRtYXJnaW4tbGVmdDogMTAlO1xufVxuXG4ubWF0LWZvcm0tZmllbGR7XG5cdHdpZHRoOiA0NCU7XG59XG5cbmF7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbiJdfQ== */"
 
 /***/ }),
 
@@ -285,7 +287,7 @@ module.exports = ".form-field-main{\n\tmargin-left: 10%;\n}\n\n.mat-form-field{\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-field-main\">\n  <mat-form-field>\n    <input matInput placeholder=\"GitHub Username\" [(ngModel)]=\"commitUserName\" (ngModelChange)=\"saveCommitUserName($event)\">\n  </mat-form-field>\n  <b>/</b>\n  <mat-form-field>\n    <input matInput placeholder=\"GitHub repo\" [(ngModel)]=\"commitRepo\" (ngModelChange)=\"saveRepo($event)\">\n  </mat-form-field>\n</div>"
+module.exports = "<div class=\"form-field-main\">\n  <mat-form-field>\n    <input matInput placeholder=\"GitHub Username\" [(ngModel)]=\"githubUserName\" >\n  </mat-form-field>\n  <b>/</b>\n  <mat-form-field>\n    <input matInput placeholder=\"GitHub repo\" [(ngModel)]=\"githubRepo\" >\n  </mat-form-field>\n  <mat-icon aria-hidden=\"false\">\n    <a (click)=\"onClickSearch()\">search</a>\n  </mat-icon>\n</div>\n"
 
 /***/ }),
 
@@ -312,13 +314,17 @@ var CommitFormComponent = /** @class */ (function () {
         this.githubUserName = '';
         this.githubRepo = '';
     };
-    CommitFormComponent.prototype.saveRepo = function ($event) {
-        console.log($event);
-        this.githubRepoToChild.emit(this.githubRepo);
+    CommitFormComponent.prototype.saveRepo = function (repo) {
+        this.githubRepoToChild.emit(repo);
     };
-    CommitFormComponent.prototype.saveCommitUserName = function ($event) {
-        console.log($event);
-        this.githubRepoToChild.emit(this.githubUserName);
+    CommitFormComponent.prototype.saveCommitUserName = function (userName) {
+        this.githubUserNameToChild.emit(userName);
+    };
+    CommitFormComponent.prototype.onClickSearch = function () {
+        if (this.githubRepo !== '' && this.githubUserName !== '') {
+            this.saveCommitUserName(this.githubUserName);
+            this.saveRepo(this.githubRepo);
+        }
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
@@ -466,7 +472,7 @@ module.exports = ".mat-spinner {\n  position: relative;\n  margin-left: 50%;\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<app-commit-item *ngFor=\"let commit of commitList\" [commit] = commit></app-commit-item>\n"
+module.exports = "<app-commit-item *ngFor=\"let commit of commitList\" [commit] = commit></app-commit-item>\n\n"
 
 /***/ }),
 
@@ -494,8 +500,7 @@ var CommitTableComponent = /** @class */ (function () {
         //this.getCommitList();
     };
     CommitTableComponent.prototype.ngOnChanges = function (changes) {
-        console.log("eerer");
-        console.log(changes);
+        this.getCommitList();
     };
     CommitTableComponent.prototype.getCommitList = function () {
         var _this = this;
@@ -594,7 +599,7 @@ var FeatureModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _commit_history_commit_history_module__WEBPACK_IMPORTED_MODULE_3__["CommitHistoryModule"],
                 _share_share_module__WEBPACK_IMPORTED_MODULE_5__["ShareModule"],
-                _commit_form_commit_form_module__WEBPACK_IMPORTED_MODULE_4__["CommitFormModule"]
+                _commit_form_commit_form_module__WEBPACK_IMPORTED_MODULE_4__["CommitFormModule"],
             ],
             exports: [
                 _commit_history_commit_history_module__WEBPACK_IMPORTED_MODULE_3__["CommitHistoryModule"],
@@ -628,7 +633,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm5/progress-spinner.es5.js");
 /* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
 
 
 
@@ -648,12 +655,13 @@ var ShareModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardModule"],
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"],
                 _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormFieldModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"],
             ],
             exports: [
                 _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardModule"],
@@ -661,7 +669,8 @@ var ShareModule = /** @class */ (function () {
                 _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"],
                 _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormFieldModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"],
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"],
             ]
         })
     ], ShareModule);
