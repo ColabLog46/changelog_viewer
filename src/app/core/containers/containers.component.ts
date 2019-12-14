@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-container',
@@ -7,19 +7,21 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ContainerComponent implements OnInit {
 
-  githubUserName: string
+  githubUserName: string;
   githubRepo: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.githubUserName = '';
+    this.githubRepo = '';
   }
 
-  updateUserName($event){
+  updateUserName($event) {
     this.githubUserName = $event;
   }
 
-  updateRepo($event){
+  updateRepo($event) {
     this.githubRepo = $event;
   }
 

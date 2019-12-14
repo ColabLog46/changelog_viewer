@@ -20,14 +20,19 @@ export class CommitFormComponent implements OnInit {
     this.githubRepo = '';
   }
 
-  saveRepo($event) {
-    console.log($event);
-    this.githubRepoToChild.emit(this.githubRepo);
+  saveRepo(repo: string) {
+    this.githubRepoToChild.emit(repo);
   }
 
-  saveCommitUserName($event){
-    console.log($event);
-    this.githubRepoToChild.emit(this.githubUserName);
+  saveCommitUserName(userName: string) {
+    this.githubUserNameToChild.emit(userName);
+  }
+
+  onClickSearch() {
+    if (this.githubRepo !== '' && this.githubUserName !== '') {
+      this.saveCommitUserName(this.githubUserName);
+      this.saveRepo(this.githubRepo);
+    }
   }
 
 }
