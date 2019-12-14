@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
 
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MatCardModule,
+    MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
     HttpClientModule,
@@ -29,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatIconModule,
   ]
 })
 export class ShareModule { }

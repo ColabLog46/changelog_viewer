@@ -11,7 +11,7 @@ import { ShareModule } from '../share/share.module';
     CommonModule,
     CommitHistoryModule,
     ShareModule,
-    CommitFormModule
+    CommitFormModule,
   ],
   exports: [
     CommitHistoryModule,

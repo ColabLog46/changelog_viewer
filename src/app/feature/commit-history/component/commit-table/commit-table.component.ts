@@ -19,9 +19,8 @@ export class CommitTableComponent implements OnInit, OnChanges {
     //this.getCommitList();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log("eerer")
-    console.log(changes)
+  ngOnChanges(changes: SimpleChanges){
+    this.getCommitList();
   }
 
   getCommitList() {
