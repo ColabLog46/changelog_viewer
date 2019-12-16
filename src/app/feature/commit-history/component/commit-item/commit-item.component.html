@@ -1,4 +1,4 @@
-<mat-card class="commit-item">
+<!-- <mat-card class="commit-item">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
 
@@ -19,4 +19,37 @@
 </mat-card>
 
 <ng-template #MessageUpTo60>{{commit.commit.message.substring(0,61)}} [...]</ng-template>
-<ng-template #MessageLessThan60>{{commit.commit.message}}</ng-template>
+<ng-template #MessageLessThan60>{{commit.commit.message}}</ng-template> -->
+
+
+<a href={{commit.html_url}} target="_blank"><mat-card class="commit-item">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+
+    <mat-card-subtitle>
+      <img mat-card-image src={{commit.author.avatar_url}}>
+      <div class="author-login">
+        {{commit.author.login}}
+      </div>
+      <div class="commit-date">
+        {{commit.commit.author.date}}
+      </div>
+      <mat-card-title>
+        <div  *ngIf="commit.commit.message.length >= 60; then MessageUpTo60 else MessageLessThan60">
+        </div>
+      </mat-card-title>
+    </mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+</a>
+
+<ng-template #MessageUpTo60>
+  <div class="commit-message">
+    {{commit.commit.message.substring(0,61)}} [...]
+  </div>
+</ng-template>
+<ng-template #MessageLessThan60>
+  <div class="commit-message">
+   {{commit.commit.message}}
+  </div>
+</ng-template>
