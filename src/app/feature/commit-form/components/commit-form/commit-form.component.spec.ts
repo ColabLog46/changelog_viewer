@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommitFormComponent } from './commit-form.component';
+import { ShareModule } from 'src/app/share/share.module';
+import { CommonModule } from '@angular/common';
+import { CommitFormModule } from '../../commit-form.module';
 
 describe('CommitFormComponent', () => {
   let component: CommitFormComponent;
@@ -8,7 +11,9 @@ describe('CommitFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommitFormComponent ]
+      imports: [
+        CommitFormModule
+      ]
     })
     .compileComponents();
   }));

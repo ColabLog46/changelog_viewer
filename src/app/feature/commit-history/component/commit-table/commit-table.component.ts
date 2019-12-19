@@ -19,12 +19,12 @@ export class CommitTableComponent implements OnInit, OnChanges {
     //this.getCommitList();
   }
 
-  ngOnChanges(changes: SimpleChanges){
+  ngOnChanges(changes: SimpleChanges) {
     this.getCommitList();
   }
 
   getCommitList() {
-    this.serviceCommit.getCommitList(this.githubUser,this.githubRepo,1).subscribe(
+    this.serviceCommit.getCommitList(this.githubUser, this.githubRepo, 1).subscribe(
       (data: any) => {
         this.commitList = data;
       }
