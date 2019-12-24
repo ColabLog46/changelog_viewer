@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommitTableComponent } from './commit-table.component';
+import { ShareModule } from 'src/app/share/share.module';
+import { CommitHistoryModule } from '../../commit-history.module';
 
 describe('CommitTableComponent', () => {
   let component: CommitTableComponent;
@@ -8,7 +10,10 @@ describe('CommitTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommitTableComponent ]
+      imports: [
+        CommitHistoryModule,
+        ShareModule
+      ]
     })
     .compileComponents();
   }));
