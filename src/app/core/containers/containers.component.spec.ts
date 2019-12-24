@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContainerComponent } from './containers.component';
+import { FeatureModule } from 'src/app/feature/features.module';
+import { CommonModule } from '@angular/common';
+import { CoreModule } from '../core.module';
 
 describe('ContainerComponent', () => {
   let component: ContainerComponent;
@@ -8,7 +11,9 @@ describe('ContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContainerComponent ]
+      imports: [
+        CoreModule
+      ]
     })
     .compileComponents();
   }));

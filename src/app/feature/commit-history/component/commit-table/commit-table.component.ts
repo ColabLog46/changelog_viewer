@@ -24,7 +24,7 @@ export class CommitTableComponent implements OnInit, OnChanges {
   }
 
   getCommitList() {
-    this.serviceCommit.getCommitList(this.githubUser,this.githubRepo,1).subscribe(
+    this.serviceCommit.getCommitList(this.githubUser, this.githubRepo, 1).subscribe(
       (data: any) => {
         this.commitList = data;
       }
