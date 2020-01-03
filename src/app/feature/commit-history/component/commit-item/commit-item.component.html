@@ -3,9 +3,9 @@
     <div mat-card-avatar class="example-header-image"></div>
 
     <mat-card-subtitle>
-      <img mat-card-image src={{commit.author.avatar_url}}>
+      <img mat-card-image src={{commit.?author.avatar_url}}>
       <div class="author-login">
-          {{commit.author.login}}
+          {{commit.?author.login}}
       </div>
 
       <mat-card-title *ngIf="commit.commit.message.length >= 60; then MessageUpTo60 else MessageLessThan60"></mat-card-title>
@@ -27,9 +27,9 @@
     <div mat-card-avatar class="example-header-image"></div>
 
     <mat-card-subtitle>
-      <img mat-card-image src={{commit.author.avatar_url}}>
+      <img mat-card-image src={{commit.author?.avatar_url}}>
       <div class="author-login">
-        {{commit.author.login}}
+        {{commit.author?.login}}
       </div>
       <div class="commit-date">
         {{commit.commit.author.date}}

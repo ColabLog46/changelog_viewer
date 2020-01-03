@@ -7,13 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CommitItemComponent implements OnInit {
 
-  @Input()
-  commit: any;
+  @Input() commit: any;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.commit)
   }
 
 }

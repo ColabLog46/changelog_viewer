@@ -5,8 +5,6 @@ import { CommitFormModule } from './commit-form/commit-form.module';
 import { ShareModule } from '../share/share.module';
 
 @NgModule({
-  declarations: [
-  ],
   imports: [
     CommonModule,
     CommitHistoryModule,
